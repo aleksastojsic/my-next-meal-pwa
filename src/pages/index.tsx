@@ -102,7 +102,7 @@ const Home: NextPage = () => {
                     src={ytUrl}
                     frameBorder={0}
                     allowFullScreen
-                    className='my-2 aspect-video mx-auto rounded-lg'
+                    className='w-full my-2 aspect-video my-2 mx-auto rounded-lg'
                   />
                 </>
               )}
