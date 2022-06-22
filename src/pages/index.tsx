@@ -55,7 +55,7 @@ const Home: NextPage = () => {
         >
           Generate Next Meal
         </button>
-        <div className='overflow-scroll bg-base-300 text-base-content px-2 mb-2 rounded-lg'>
+        <div className='overflow-y-scroll bg-base-300 text-base-content px-2 mb-2 rounded-lg'>
           {loading ? (
             <p>Loading...</p>
           ) : (
