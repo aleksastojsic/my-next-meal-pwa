@@ -46,7 +46,7 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
             </span>{' '}
             by{' '}
             <a
-              href='https://github.com/aleksa-stojsic/next-counter-and-pomo'
+              href='https://github.com/aleksa-stojsic/next-meal'
               className='link link-accent link-hover'
               target='_blank'
               rel='noreferrer'
