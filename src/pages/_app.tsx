@@ -8,7 +8,12 @@ function MyApp({ Component, pageProps }: AppProps) {
     <ThemeProvider defaultTheme='system'>
       <Head>
         <meta charSet='utf-8' />
-        <meta name='viewport' content='width=device-width, initial-scale=1.0' />
+        {/* <meta name='viewport' content='width=device-width, initial-scale=1.0' /> */}
+        {/* PWA version below */}
+        <meta
+          name='viewport'
+          content='minimum-scale=1, initial-scale=1, width=device-width, shrink-to-fit=no, viewport-fit=cover'
+        />
         <meta
           name='description'
           content='Generate a random recipe for your next meal'
