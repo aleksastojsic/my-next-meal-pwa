@@ -1,6 +1,6 @@
 {
   "name": "Next Meal",
-  "short_name": "next-meal",
+  "short_name": "Next Meal",
   "display": "standalone",
   "orientation": "portrait",
   "description": "Generate a random recipe for your next meal",
