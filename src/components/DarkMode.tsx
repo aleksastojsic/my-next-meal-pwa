@@ -18,6 +18,7 @@ const DarkMode = () => {
   return (
     <button
       className='btn btn-ghost btn-circle'
+      aria-label='Toggle dark or light mode'
       onClick={
         theme === 'bumblebee'
           ? () => setTheme('coffee')

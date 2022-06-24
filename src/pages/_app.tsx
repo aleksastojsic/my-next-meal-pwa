@@ -9,6 +9,10 @@ function MyApp({ Component, pageProps }: AppProps) {
       <Head>
         <meta charSet='utf-8' />
         <meta name='viewport' content='width=device-width, initial-scale=1.0' />
+        <meta
+          name='description'
+          content='Generate a random recipe for your next meal'
+        />
         <title>Next Meal</title>
       </Head>
       <Component {...pageProps} />

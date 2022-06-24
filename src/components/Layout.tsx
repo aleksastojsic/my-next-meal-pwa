@@ -10,12 +10,15 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
           <div className='navbar bg-base-100'>
             <div className='navbar-start'>
               <div className='dropdown'>
-                <label
+                <button
                   tabIndex={0}
                   className='btn btn-ghost btn-circle text-3xl'
+                  aria-haspopup='true'
+                  aria-expanded='false'
+                  aria-label='Menu'
                 >
                   🍔
-                </label>
+                </button>
                 <ul
                   tabIndex={0}
                   className='menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52'
