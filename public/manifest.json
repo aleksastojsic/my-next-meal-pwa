@@ -4,8 +4,8 @@
   "display": "standalone",
   "orientation": "portrait",
   "description": "Generate a random recipe for your next meal",
-  "theme_color": "#e0a72e",
-  "background_color": "#e0a72e",
+  "theme_color": "#dd944c",
+  "background_color": "#dd944c",
   "scope": "/",
   "start_url": "/",
 

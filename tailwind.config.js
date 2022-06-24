@@ -8,7 +8,8 @@ module.exports = {
     extend: {
       colors: {
         custom: {
-          DEFAULT: '#e0a72e'
+          light: '#e0a72e',
+          dark: '#dd944c'
         }
       }
     }
@@ -23,6 +24,6 @@ module.exports = {
     darkTheme: 'coffee'
   },
   variants: {
-    scrollbar: ['rounded']
+    scrollbar: ['dark', 'rounded']
   }
 };

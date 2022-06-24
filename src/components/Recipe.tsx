@@ -1,7 +1,9 @@
+import Link from 'next/link';
 import Image from 'next/image';
+import { ArrowUpRightCircle } from 'tabler-icons-react';
 
 const Recipe = ({ ...props }) => {
-  const { strMeal, strMealThumb, strInstructions, strYoutube } =
+  const { strMeal, strMealThumb, strInstructions, strYoutube, strSource } =
     props.data || {};
 
   const ytUrl = strYoutube?.replace('watch?v=', 'embed/');
@@ -45,13 +47,13 @@ const Recipe = ({ ...props }) => {
         </>
       ) : (
         <>
-          <div className='scrollbar-thin scrollbar-thumb-custom scrollbar-track-current overflow-y-scroll scrollbar-thumb-rounded-full scrollbar-track-rounded-full bg-base-300 text-base-content pl-2 pr-4 mb-2 rounded-lg'>
+          <div className='scrollbar-thin scrollbar-thumb-custom-light dark:scrollbar-thumb-custom-dark scrollbar-track-current overflow-y-scroll scrollbar-thumb-rounded-full scrollbar-track-rounded-full bg-base-300 text-base-content pl-2 pr-4 mb-2 rounded-lg'>
             {strMeal && strMealThumb && (
               <>
                 <h2 className='underline decoration-primary decoration-wavy my-2 text-center text-3xl capitalize'>
                   {strMeal}
                 </h2>
-                <div className='flex flex-col items-center'>
+                <div className='flex flex-col items-center my-4'>
                   <Image
                     src={
                       strMealThumb ||
@@ -60,12 +62,33 @@ const Recipe = ({ ...props }) => {
                     alt={strMeal}
                     width={300}
                     height={300}
-                    className='my-2 rounded-lg'
+                    className='rounded-lg'
                   />
                 </div>
               </>
             )}
-
+            {strSource && (
+              <>
+                <div>
+                  <h3 className='inline-block underline decoration-4 decoration-primary my-2 mr-2'>
+                    Source:
+                  </h3>
+                  <Link href={strSource}>
+                    <a
+                      target='_blank'
+                      className='inline-block link text-sky-600 link-hover capitalize text-lg'
+                    >
+                      Click Here
+                      <ArrowUpRightCircle
+                        className='mb-2 inline-block'
+                        size={16}
+                        strokeWidth={2}
+                      />
+                    </a>
+                  </Link>
+                </div>
+              </>
+            )}
             {ingredients.length > 0 && (
               <>
                 <h3 className='underline decoration-4 decoration-primary my-2'>
