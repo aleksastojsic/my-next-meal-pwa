@@ -48,7 +48,7 @@ const Recipe = ({ ...props }) => {
           <div className='scrollbar-thin scrollbar-thumb-custom scrollbar-track-current overflow-y-scroll scrollbar-thumb-rounded-full scrollbar-track-rounded-full bg-base-300 text-base-content pl-2 pr-4 mb-2 rounded-lg'>
             {strMeal && strMealThumb && (
               <>
-                <h2 className='underline decoration-primary decoration-wavy my-2 text-center text-3xl'>
+                <h2 className='underline decoration-primary decoration-wavy my-2 text-center text-3xl capitalize'>
                   {strMeal}
                 </h2>
                 <div className='flex flex-col items-center'>
