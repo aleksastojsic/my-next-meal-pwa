@@ -15,6 +15,7 @@ const Home: NextPage = () => {
       <h3 className='my-1'>We got you covered!</h3>
       <button
         className='btn btn-primary btn-block md:w-64 my-2 text-lg'
+        aria-label='Get a random recipe'
         onClick={fetchData}
       >
         Generate Next Meal
