@@ -1,4 +1,6 @@
 import DarkMode from './DarkMode';
+import Link from 'next/link';
+import { ArrowUpRightCircle } from 'tabler-icons-react';
 
 const Layout = ({ children }: { children: React.ReactNode }) => {
   return (
@@ -19,19 +21,30 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
                   className='menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52'
                 >
                   <li>
-                    <a className='link hover: no-underline'>Homepage</a>
+                    <Link href='/'>Homepage</Link>
                   </li>
                   <li>
-                    <a className='link hover: no-underline'>About</a>
+                    <Link href='/about'>About</Link>
                   </li>
                   <li>
-                    <a className='link hover: no-underline'>GitHub</a>
+                    <Link href='https://github.com/aleksa-stojsic'>
+                      <a target='_blank'>
+                        GitHub{' '}
+                        <ArrowUpRightCircle
+                          className='text-info ml-[-8px] mb-2'
+                          size={16}
+                          strokeWidth={2}
+                        />
+                      </a>
+                    </Link>
                   </li>
                 </ul>
               </div>
             </div>
             <div className='navbar-center'>
-              <a className='btn btn-ghost normal-case text-2xl'>Next Meal</a>
+              <div className='btn btn-ghost normal-case text-2xl'>
+                <Link href='/'>Next Meal</Link>
+              </div>
             </div>
             <div className='navbar-end'>
               <DarkMode />
@@ -39,7 +52,7 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
           </div>
         </div>
         <main className='flex-grow w-[96%] max-w-5xl px-[2%] py-0 mx-auto my-0 overflow-hidden prose'>
-          {children}
+          <div className='flex flex-col h-full'>{children}</div>
         </main>
         <footer className='footer footer-center p-3 bg-base-200'>
           <div>

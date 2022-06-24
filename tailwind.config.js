@@ -5,11 +5,24 @@ module.exports = {
     './src/components/**/*.{js,ts,jsx,tsx}'
   ],
   theme: {
-    extend: {}
+    extend: {
+      colors: {
+        custom: {
+          DEFAULT: '#e0a72e'
+        }
+      }
+    }
   },
-  plugins: [require('@tailwindcss/typography'), require('daisyui')],
+  plugins: [
+    require('@tailwindcss/typography'),
+    require('tailwind-scrollbar'),
+    require('daisyui')
+  ],
   daisyui: {
     themes: ['bumblebee', 'coffee'],
     darkTheme: 'coffee'
+  },
+  variants: {
+    scrollbar: ['rounded']
   }
 };
