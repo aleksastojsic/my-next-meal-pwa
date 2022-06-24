@@ -2,7 +2,7 @@ import DarkMode from './DarkMode';
 
 const Layout = ({ children }: { children: React.ReactNode }) => {
   return (
-    <div class='absolute inset-0'>
+    <div className='absolute inset-0'>
       <div className='flex flex-col min-h-screen h-screen overflow-hidden'>
         <div className='w-[96%] max-w-5xl px-[2%] py-0 mx-auto my-0'>
           <div className='navbar bg-base-100'>
