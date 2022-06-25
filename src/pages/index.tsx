@@ -6,6 +6,8 @@ const PWAPrompt = dynamic(() => import('react-ios-pwa-prompt' as any), {
 import Layout from '../components/Layout';
 import Recipe from '../components/Recipe';
 import useFetch from '../hooks/useFetch';
+// @ts-ignore
+import is from 'is-it-check';
 
 const Home: NextPage = () => {
   const apiUrl = 'https://themealdb.com/api/json/v1/1/random.php';
@@ -27,7 +29,7 @@ const Home: NextPage = () => {
         </button>
         <Recipe data={data} loading={loading} />
       </Layout>
-      <PWAPrompt />
+      {is.safari() ? <PWAPrompt /> : null}
     </>
   );
 };

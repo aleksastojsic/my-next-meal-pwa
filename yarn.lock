@@ -2538,6 +2538,11 @@ is-glob@^4.0.0, is-glob@^4.0.1, is-glob@^4.0.3, is-glob@~4.0.1:
   dependencies:
     is-extglob "^2.1.1"
 
+is-it-check@^1.0.11:
+  version "1.0.11"
+  resolved "https://registry.yarnpkg.com/is-it-check/-/is-it-check-1.0.11.tgz#caa5727c93310cd6f6676a59aef7069d17d345e3"
+  integrity sha512-yHkD7JZtumSwo7p7meD7yXGt8S+bU6iLb4J4PG5YW87bAfgqRJmyQ5G4lBjSbEnoNdegER9dcjHXDV3qSVS0SA==
+
 is-module@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/is-module/-/is-module-1.0.0.tgz#3258fb69f78c14d5b815d664336b4cffb6441591"
