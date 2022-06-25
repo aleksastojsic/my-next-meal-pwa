@@ -5,11 +5,7 @@ import { ThemeProvider } from 'next-themes';
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
-    <ThemeProvider
-      enableSystem={true}
-      defaultTheme='system'
-      value={{ light: 'bumblebee', dark: 'coffee' }}
-    >
+    <ThemeProvider value={{ light: 'bumblebee', dark: 'coffee' }}>
       <Head>
         <meta charSet='utf-8' />
         {/* <meta name='viewport' content='width=device-width, initial-scale=1.0' /> */}

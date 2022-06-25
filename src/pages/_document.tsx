@@ -10,6 +10,8 @@ import Document, {
 const APP_NAME = 'Next Meal';
 const APP_DESCRIPTION = 'Generate a random recipe for your next meal';
 
+/////////////////////////////////////////////////////////////
+// credit: https://sreetamdas.com/blog/the-perfect-dark-mode
 function setInitialColorMode() {
   function getInitialColorMode() {
     const preference = window.localStorage.getItem('theme');
@@ -58,6 +60,7 @@ const blockingSetInitialColorMode = `(function() {
           ${setInitialColorMode.toString()}
           setInitialColorMode();
   })()`;
+////////////////////////////////////////////////////////
 class MyDocument extends Document {
   static async getInitialProps(
     ctx: DocumentContext
