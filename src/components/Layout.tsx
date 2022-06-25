@@ -13,8 +13,6 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
                 <button
                   tabIndex={0}
                   className='btn btn-ghost btn-circle text-3xl'
-                  aria-haspopup='true'
-                  aria-expanded='false'
                   aria-label='Menu'
                 >
                   🍔
