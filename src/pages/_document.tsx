@@ -46,10 +46,10 @@ function setInitialColorMode() {
 
   // add HTML attribute if dark mode
 
-  if (colorMode === 'coffee') {
-    document.documentElement.setAttribute('data-theme', 'coffee');
+  if (colorMode === 'dark') {
+    document.documentElement.setAttribute('data-theme', 'dark');
   } else {
-    document.documentElement.setAttribute('data-theme', 'bumblebee');
+    document.documentElement.setAttribute('data-theme', 'light');
   }
 }
 // our function needs to be a string
