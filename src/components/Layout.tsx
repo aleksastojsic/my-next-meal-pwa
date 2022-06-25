@@ -43,9 +43,11 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
               </div>
             </div>
             <div className='navbar-center'>
-              <div className='btn btn-ghost normal-case text-2xl'>
-                <Link href='/'>Next Meal</Link>
-              </div>
+              <Link href='/'>
+                <span className='btn btn-ghost normal-case text-2xl'>
+                  Next Meal
+                </span>
+              </Link>
             </div>
             <div className='navbar-end'>
               <DarkMode />
