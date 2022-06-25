@@ -10,13 +10,13 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
           <div className='navbar bg-base-100'>
             <div className='navbar-start'>
               <div className='dropdown'>
-                <button
+                <label
                   tabIndex={0}
                   className='btn btn-ghost btn-circle text-3xl'
                   aria-label='Menu'
                 >
                   🍔
-                </button>
+                </label>
                 <ul
                   tabIndex={0}
                   className='menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52'
@@ -55,7 +55,7 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
         <main className='flex-grow w-[96%] max-w-5xl px-[2%] py-0 mx-auto my-0 overflow-hidden prose'>
           <div className='flex flex-col h-full'>{children}</div>
         </main>
-        <footer className='footer footer-center p-3 bg-base-200'>
+        <footer className='footer footer-center py-3 px-1 bg-base-200 md:px-3'>
           <div>
             <p>
               &copy; {new Date().getFullYear()} • Made with{' '}
