@@ -6,8 +6,8 @@ import { ThemeProvider } from 'next-themes';
 function MyApp({ Component, pageProps }: AppProps) {
   return (
     <ThemeProvider
-      defaultTheme='system'
       enableSystem={true}
+      defaultTheme='system'
       value={{ light: 'bumblebee', dark: 'coffee' }}
     >
       <Head>
