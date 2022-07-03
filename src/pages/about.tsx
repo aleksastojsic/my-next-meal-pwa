@@ -5,7 +5,7 @@ const About: NextPage = () => {
   return (
     <Layout>
       <h1 className='mt-8'>About</h1>
-      <div className='pr-3 overflow-y-scroll scrollbar-thin scrollbar-thumb-custom-light scrollbar-track-current scrollbar-thumb-rounded-full scrollbar-track-rounded-full'>
+      <div className='pr-3 overflow-y-auto scrollbar-thin scrollbar-thumb-custom-light scrollbar-track-current scrollbar-thumb-rounded-full scrollbar-track-rounded-full'>
         <p>
           Next.js application that generates a random meal recipe using
           TheMealDB API.
