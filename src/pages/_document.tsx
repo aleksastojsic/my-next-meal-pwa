@@ -6,6 +6,7 @@ import Document, {
   Main,
   NextScript
 } from 'next/document';
+import Script from 'next/script';
 
 const APP_NAME = 'Next Meal';
 const APP_DESCRIPTION = 'Generate a random recipe for your next meal';
@@ -98,13 +99,15 @@ class MyDocument extends Document {
           {/* PWA end */}
         </Head>
         <body>
-          <script
+          <Main />
+          <NextScript />
+          <Script
+            id='blockingSetInitialColorMode'
             dangerouslySetInnerHTML={{
               __html: blockingSetInitialColorMode
             }}
-          ></script>
-          <Main />
-          <NextScript />
+            strategy='beforeInteractive'
+          ></Script>
         </body>
       </Html>
     );
