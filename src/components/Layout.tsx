@@ -1,8 +1,16 @@
 import DarkMode from './DarkMode';
 import Link from 'next/link';
 import { ArrowUpRightCircle } from 'tabler-icons-react';
+import { useRouter } from 'next/router';
+import { useState, useEffect } from 'react';
 
 const Layout = ({ children }: { children: React.ReactNode }) => {
+  const [isHome, setIsHome] = useState(false);
+  const router = useRouter();
+  useEffect(() => {
+    setIsHome(router.pathname === '/');
+  }, [router.pathname]);
+
   return (
     <div className='absolute inset-0'>
       <div className='flex flex-col min-h-screen h-full overflow-hidden'>
@@ -19,11 +27,8 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
                 </label>
                 <ul
                   tabIndex={0}
-                  className='menu menu-compact dropdown-content mt-2 p-1 shadow bg-base-100 rounded-box w-52'
+                  className='menu menu-compact dropdown-content mt-2 p-1 shadow bg-base-200/50 rounded-box w-52'
                 >
-                  <li>
-                    <Link href='/'>Homepage</Link>
-                  </li>
                   <li>
                     <Link href='/about'>About</Link>
                   </li>
@@ -43,11 +48,21 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
               </div>
             </div>
             <div className='navbar-center'>
-              <div onClick={() => window.location.reload()}>
-                <span className='btn btn-ghost normal-case text-2xl'>
-                  Next Meal
-                </span>
-              </div>
+              {!isHome && (
+                <Link href='/'>
+                  <span className='btn btn-ghost normal-case text-2xl'>
+                    Next Meal
+                  </span>
+                </Link>
+              )}
+
+              {isHome && (
+                <div onClick={() => window.location.reload()}>
+                  <span className='btn btn-ghost normal-case text-2xl'>
+                    Next Meal
+                  </span>
+                </div>
+              )}
             </div>
             <div className='navbar-end'>
               <DarkMode />
@@ -75,6 +90,16 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
               >
                 aleksa.codes
               </a>
+              <p>
+                <a
+                  href='https://storyset.com/information'
+                  target='_blank'
+                  rel='noreferrer'
+                  className='text-xs link link-hover'
+                >
+                  Information illustrations by Storyset
+                </a>
+              </p>
             </p>
           </div>
         </footer>
