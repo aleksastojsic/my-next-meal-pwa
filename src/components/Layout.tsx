@@ -33,7 +33,7 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
                     <Link href='/about'>About</Link>
                   </li>
                   <li>
-                    <Link href='https://github.com/aleksa-stojsic'>
+                    <Link href='https://github.com/aleksastojsic'>
                       <a target='_blank'>
                         GitHub{' '}
                         <ArrowUpRightCircle
