@@ -5,9 +5,9 @@ import { ArrowUpRightCircle } from 'tabler-icons-react';
 const Layout = ({ children }: { children: React.ReactNode }) => {
   return (
     <div className='absolute inset-0'>
-      <div className='flex flex-col min-h-screen h-screen overflow-hidden'>
-        <div className='w-[96%] max-w-5xl px-[2%] py-0 mx-auto my-0'>
-          <div className='navbar bg-base-100'>
+      <div className='flex flex-col min-h-screen h-full overflow-hidden'>
+        <div className='w-[96%] max-w-3xl px-[2%] py-0 mx-auto my-0'>
+          <div className='navbar bg-base-100 px-0'>
             <div className='navbar-start'>
               <div className='dropdown'>
                 <label
@@ -19,7 +19,7 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
                 </label>
                 <ul
                   tabIndex={0}
-                  className='menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52'
+                  className='menu menu-compact dropdown-content mt-1 p-1 shadow bg-base-100 rounded-box w-52'
                 >
                   <li>
                     <Link href='/'>Homepage</Link>
@@ -43,21 +43,23 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
               </div>
             </div>
             <div className='navbar-center'>
-              <Link href='/'>
+              <div onClick={() => window.location.reload()}>
                 <span className='btn btn-ghost normal-case text-2xl'>
                   Next Meal
                 </span>
-              </Link>
+              </div>
             </div>
             <div className='navbar-end'>
               <DarkMode />
             </div>
           </div>
         </div>
-        <main className='flex-grow w-[96%] max-w-5xl px-[2%] py-0 mx-auto my-0 overflow-hidden prose'>
-          <div className='flex flex-col h-full'>{children}</div>
+        <main className='flex-grow w-[96%] max-w-3xl px-[2%] py-0 mx-auto my-0 overflow-hidden prose'>
+          <div className='flex flex-col h-full justify-center items-center'>
+            {children}
+          </div>
         </main>
-        <footer className='footer footer-center py-3 px-1 bg-base-200 md:px-3'>
+        <footer className='footer footer-center p-2 text-sm'>
           <div>
             <p>
               &copy; {new Date().getFullYear()} • Made with{' '}
@@ -66,12 +68,12 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
               </span>{' '}
               by{' '}
               <a
-                href='https://github.com/aleksa-stojsic/next-meal'
+                href='https://github.com/aleksastojsic/my-next-meal-pwa'
                 className='link link-accent link-hover'
                 target='_blank'
                 rel='noreferrer'
               >
-                Aleksa Stojsic
+                aleksa.codes
               </a>
             </p>
           </div>
