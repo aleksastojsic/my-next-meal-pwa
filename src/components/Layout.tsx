@@ -27,7 +27,7 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
                 </label>
                 <ul
                   tabIndex={0}
-                  className='menu menu-compact dropdown-content mt-2 p-1 shadow bg-base-200/50 rounded-box w-52'
+                  className='menu menu-compact dropdown-content mt-2 p-1 shadow bg-base-100 rounded-box w-52'
                 >
                   <li>
                     <Link href='/about'>About</Link>
