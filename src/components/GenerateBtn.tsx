@@ -13,10 +13,7 @@ const GenerateBtn = ({ onClick }: { onClick: () => void }) => {
     <button
       className='group btn btn-primary btn-block sm:w-72 my-4 text-lg font-bold hover:scale-105'
       aria-label='Get a random recipe'
-      onClick={(e) => {
-        onClick();
-        e.currentTarget.blur();
-      }}
+      onClick={onClick}
     >
       {/* display a random dice icon, and hover:nimate-spin it */}
       {dice === 1 && (
