@@ -97,7 +97,7 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
                   rel='noreferrer'
                   className='text-xs link link-hover'
                 >
-                  Information illustrations by Storyset
+                  illustration by Storyset
                 </a>
               </p>
             </p>
