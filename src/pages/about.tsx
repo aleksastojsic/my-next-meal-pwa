@@ -65,7 +65,7 @@ const About: NextPage = () => {
         <p>
           This project is open source and is available on{' '}
           <a
-            href='https://github.com/aleksastojsic/my-next-meal-pwa'
+            href='https://github.com/aleksa-codes/my-next-meal-pwa'
             target='_blank'
             rel='noopener noreferrer'
           >

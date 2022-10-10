@@ -33,7 +33,7 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
                     <Link href='/about'>About</Link>
                   </li>
                   <li>
-                    <Link href='https://github.com/aleksastojsic'>
+                    <Link href='https://github.com/aleksa-codes'>
                       <a target='_blank'>
                         GitHub{' '}
                         <ArrowUpRightCircle
@@ -83,7 +83,7 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
               </span>{' '}
               by{' '}
               <a
-                href='https://github.com/aleksastojsic/my-next-meal-pwa'
+                href='https://github.com/aleksa-codes/my-next-meal-pwa'
                 className='link link-accent link-hover'
                 target='_blank'
                 rel='noreferrer'
