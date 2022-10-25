@@ -12,7 +12,7 @@ const Hero = ({ isData }: { isData: boolean }) => {
           width={300}
           height={300}
           // fit on iphone se/5s, smaller screens than scale down
-          className='w-[70%] h-[70%] max-w-[300px] max-h-[300px] mx-auto'
+          className='w-[65%] h-[65%] sm:w-[100%] sm:h-[100%] max-w-[300px] max-h-[300px] mx-auto'
         />
       )}
       <h1 className='my-1'>Hungry?</h1>
