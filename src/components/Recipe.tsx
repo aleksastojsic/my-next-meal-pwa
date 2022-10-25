@@ -53,7 +53,7 @@ const Recipe = ({ ...props }) => {
                 <h2 className='text-primary my-2 text-center text-3xl capitalize font-extrabold'>
                   {strMeal}
                 </h2>
-                <div className='flex flex-col items-center my-4'>
+                <div className='flex flex-col items-center not-prose'>
                   <Image
                     src={
                       strMealThumb ||
@@ -62,7 +62,7 @@ const Recipe = ({ ...props }) => {
                     alt={strMeal}
                     width={300}
                     height={300}
-                    className='rounded-lg'
+                    className='rounded-lg my-3'
                   />
                 </div>
               </>
@@ -73,18 +73,17 @@ const Recipe = ({ ...props }) => {
                   <h3 className='inline-block underline decoration-4 decoration-primary my-2 mr-2'>
                     Source:
                   </h3>
-                  <Link href={strSource}>
-                    <a
-                      target='_blank'
-                      className='inline-block link text-sky-600 link-hover capitalize text-lg'
-                    >
-                      Click Here
-                      <ArrowUpRightCircle
-                        className='mb-2 inline-block'
-                        size={16}
-                        strokeWidth={2}
-                      />
-                    </a>
+                  <Link
+                    href={strSource}
+                    target='_blank'
+                    className='inline-block link text-sky-600 link-hover capitalize text-lg'
+                  >
+                    Click Here
+                    <ArrowUpRightCircle
+                      className='mb-2 ml-1 inline-block'
+                      size={16}
+                      strokeWidth={2}
+                    />
                   </Link>
                 </div>
               </>

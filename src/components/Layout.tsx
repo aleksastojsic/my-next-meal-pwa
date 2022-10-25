@@ -33,15 +33,14 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
                     <Link href='/about'>About</Link>
                   </li>
                   <li>
-                    <Link href='https://github.com/aleksa-codes'>
-                      <a target='_blank'>
+                    <Link href='https://github.com/aleksa-codes' target='_blank'>
                         GitHub{' '}
                         <ArrowUpRightCircle
                           className='text-info ml-[-8px] mb-2'
                           size={16}
                           strokeWidth={2}
                         />
-                      </a>
+                      
                     </Link>
                   </li>
                 </ul>
@@ -77,11 +76,11 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
         <footer className='footer footer-center p-2 text-sm'>
           <div>
             <p>
-              &copy; {new Date().getFullYear()} • Made with{' '}
-              <span role='img' aria-label='computer-coffee'>
+              &copy; {new Date().getFullYear()} • Made by{' '}
+              {/* <span role='img' aria-label='computer-coffee'>
                 💻 & ☕
               </span>{' '}
-              by{' '}
+              by{' '} */}
               <a
                 href='https://github.com/aleksa-codes/my-next-meal-pwa'
                 className='link link-accent link-hover'
@@ -90,7 +89,7 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
               >
                 aleksa.codes
               </a>
-              <p>
+              {/* <p>
                 <a
                   href='https://storyset.com/information'
                   target='_blank'
@@ -99,7 +98,7 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
                 >
                   illustration by Storyset
                 </a>
-              </p>
+              </p> */}
             </p>
           </div>
         </footer>

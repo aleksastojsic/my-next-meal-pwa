@@ -11,9 +11,11 @@ const Hero = ({ isData }: { isData: boolean }) => {
           alt='Recipe Book'
           width={300}
           height={300}
+          // fit on iphone se/5s, smaller screens than scale down
+          className='w-[75%] h-[75%] max-w-[300px] max-h-[300px] mx-auto'
         />
       )}
-      <h1 className='my-1 mt-4'>Hungry?</h1>
+      <h1 className='my-1'>Hungry?</h1>
       <h2 className='my-1'>Can&apos;t decide what to eat?</h2>
       <h3 className='my-1'>We got you covered!</h3>
     </>
