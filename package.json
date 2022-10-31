@@ -9,7 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "daisyui": "^2.36.1",
+    "daisyui": "^2.37.0",
     "is-it-check": "^1.0.11",
     "next": "^13.0.0",
     "next-pwa": "^5.5.4",
