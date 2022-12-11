@@ -36,7 +36,7 @@ const About: NextPage = () => {
           library for switching between light and dark themes. Default system
           preference and FOUC (flash of unstyled content) prevention are
           implemented using the dangerouslySetInnerHTML hack, thanks to this
-          blog post:
+          blog post:{' '}
           <a
             href='https://sreetamdas.com/blog/the-perfect-dark-mode'
             target='_blank'
@@ -45,6 +45,7 @@ const About: NextPage = () => {
           >
             The Perfect Dark Mode
           </a>
+          .
         </p>
         <p>
           The application is a PWA (Progressive Web App). That means it is
@@ -69,7 +70,7 @@ const About: NextPage = () => {
             target='_blank'
             rel='noopener noreferrer'
           >
-            Github
+            GitHub
           </a>
           .
         </p>
