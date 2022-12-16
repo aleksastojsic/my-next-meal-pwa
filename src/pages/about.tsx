@@ -52,7 +52,7 @@ const About: NextPage = () => {
           optimized for use on mobile devices, installable on the home screen
           and works offline. Due to still limited support for PWAs, the
           installation prompt is only shown on Google Chrome (Windows and
-          Andorid). Solution and workaround for iOS devices (only works on
+          Android). Solution and workaround for iOS devices (only works on
           Safari) is implemented using the{' '}
           <a
             href='https://www.npmjs.com/package/react-ios-pwa-prompt'
