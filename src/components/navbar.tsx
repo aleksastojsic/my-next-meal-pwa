@@ -20,7 +20,7 @@ export default function Navbar() {
     <nav className='flex items-center justify-between bg-background p-4'>
       <DropdownMenu>
         <DropdownMenuTrigger asChild>
-          <Button variant='ghost' size='icon' className='pb-2 text-3xl'>
+          <Button variant='ghost' size='icon' className='pb-1 text-3xl'>
             🍔
           </Button>
         </DropdownMenuTrigger>
