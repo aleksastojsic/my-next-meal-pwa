@@ -5,7 +5,6 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Skeleton } from '@/components/ui/skeleton';
 import { Dice1, Dice2, Dice3, Dice4, Dice5, Dice6, Loader2, ExternalLink } from 'lucide-react';
 
 const diceIcons = [Dice1, Dice2, Dice3, Dice4, Dice5, Dice6];
@@ -93,7 +92,7 @@ export default function Home() {
 
   return (
     <div className='mx-auto flex h-full flex-col items-center justify-center space-y-4 p-4'>
-      {!recipe && !isLoading && (
+      {!recipe && (
         <Image
           src='/recipe-book.svg'
           alt='Food image'
@@ -119,28 +118,20 @@ export default function Home() {
           <div>{isLoading ? 'Loading...' : 'Get a random meal'}</div>
         </Button>
       </div>
-      {(isLoading || recipe) && (
-        <Card className='min-w-full flex-1 overflow-y-auto bg-muted'>
+      {recipe && (
+        <Card className='flex-1 overflow-y-auto bg-muted'>
           <CardHeader>
-            <CardTitle className='text-center text-3xl font-bold text-primary'>
-              {isLoading ? <Skeleton className='mx-auto h-9 w-3/4' /> : recipe?.strMeal}
-            </CardTitle>
+            <CardTitle className='text-center text-3xl font-bold text-primary'>{recipe.strMeal}</CardTitle>
           </CardHeader>
           <CardContent className='space-y-6'>
-            {isLoading ? (
-              <Skeleton className='mx-auto h-[300px] w-[300px] rounded-lg' />
-            ) : (
-              recipe && (
-                <Image
-                  src={recipe.strMealThumb}
-                  alt={recipe.strMeal}
-                  width={300}
-                  height={300}
-                  className='mx-auto rounded-lg shadow-lg'
-                />
-              )
-            )}
-            {!isLoading && recipe?.strSource && (
+            <Image
+              src={recipe.strMealThumb}
+              alt={recipe.strMeal}
+              width={300}
+              height={300}
+              className='mx-auto rounded-lg shadow-lg'
+            />
+            {recipe.strSource && (
               <div className='text-center'>
                 <Link
                   href={recipe.strSource}
@@ -156,35 +147,20 @@ export default function Home() {
             <div>
               <h3 className='mb-2 inline-block border-b-2 border-primary text-xl font-semibold'>Ingredients:</h3>
               <ul className='mt-2 list-inside list-disc space-y-1'>
-                {isLoading
-                  ? Array.from({ length: 5 }).map((_, i) => (
-                      <li key={i}>
-                        <Skeleton className='inline-block h-4 w-3/4' />
-                      </li>
-                    ))
-                  : recipe &&
-                    Array.from({ length: 20 }, (_, i) => i + 1).map((i) => {
-                      const ingredient = recipe[`strIngredient${i}` as keyof Meal];
-                      const measure = recipe[`strMeasure${i}` as keyof Meal];
-                      return ingredient && ingredient.trim() ? (
-                        <li key={i}>{`${measure && measure.trim() ? measure : ''} ${ingredient}`}</li>
-                      ) : null;
-                    })}
+                {Array.from({ length: 20 }, (_, i) => i + 1).map((i) => {
+                  const ingredient = recipe[`strIngredient${i}` as keyof Meal];
+                  const measure = recipe[`strMeasure${i}` as keyof Meal];
+                  return ingredient && ingredient.trim() ? (
+                    <li key={i}>{`${measure && measure.trim() ? measure : ''} ${ingredient}`}</li>
+                  ) : null;
+                })}
               </ul>
             </div>
             <div>
               <h3 className='mb-2 inline-block border-b-2 border-primary text-xl font-semibold'>Instructions:</h3>
-              {isLoading ? (
-                <div className='mt-2 space-y-2'>
-                  <Skeleton className='h-4 w-full' />
-                  <Skeleton className='h-4 w-full' />
-                  <Skeleton className='h-4 w-3/4' />
-                </div>
-              ) : (
-                recipe && <p className='mt-2 whitespace-pre-line'>{recipe.strInstructions}</p>
-              )}
+              <p className='mt-2 whitespace-pre-line'>{recipe.strInstructions}</p>
             </div>
-            {!isLoading && recipe?.strYoutube && (
+            {recipe.strYoutube && (
               <div>
                 <h3 className='mb-2 inline-block border-b-2 border-primary text-xl font-semibold'>Watch the Recipe:</h3>
                 <div className='mt-2 aspect-video'>
