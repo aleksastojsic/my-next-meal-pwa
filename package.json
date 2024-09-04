@@ -1,35 +1,39 @@
 {
-  "name": "next-meal",
+  "name": "my-next-meal-pwa",
   "version": "0.1.0",
   "private": true,
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "prettier": "prettier --write \"src/**/*.{js,jsx,ts,tsx,json,md,css,html,yaml}\""
   },
   "dependencies": {
-    "daisyui": "^2.46.0",
-    "is-it-check": "^1.0.11",
-    "next": "^13.1.1",
-    "next-pwa": "^5.5.4",
-    "next-themes": "^0.2.0",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "react-ios-pwa-prompt": "^1.8.4",
-    "tabler-icons-react": "^1.56.0"
+    "@radix-ui/react-dropdown-menu": "^2.1.1",
+    "@radix-ui/react-slot": "^1.1.0",
+    "@serwist/next": "^9.0.7",
+    "class-variance-authority": "^0.7.0",
+    "clsx": "^2.1.1",
+    "lucide-react": "^0.438.0",
+    "next": "14.2.7",
+    "next-themes": "^0.3.0",
+    "react": "^18",
+    "react-dom": "^18",
+    "tailwind-merge": "^2.5.2",
+    "tailwindcss-animate": "^1.0.7"
   },
   "devDependencies": {
-    "@tailwindcss/typography": "^0.5.8",
-    "@types/node": "18.11.18",
-    "@types/react": "18.0.26",
-    "@types/react-dom": "18.0.10",
-    "autoprefixer": "^10.4.13",
-    "eslint": "8.31.0",
-    "eslint-config-next": "13.1.1",
-    "postcss": "^8.4.20",
-    "tailwind-scrollbar": "^2.1.0",
-    "tailwindcss": "^3.2.4",
-    "typescript": "4.9.4"
+    "@types/node": "^20",
+    "@types/react": "^18",
+    "@types/react-dom": "^18",
+    "eslint": "^8",
+    "eslint-config-next": "14.2.7",
+    "postcss": "^8",
+    "prettier": "^3.3.3",
+    "prettier-plugin-tailwindcss": "^0.6.6",
+    "serwist": "^9.0.7",
+    "tailwindcss": "^3.4.1",
+    "typescript": "^5"
   }
 }
