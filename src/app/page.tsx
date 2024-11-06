@@ -93,7 +93,7 @@ export default function Home() {
 
   return (
     <div className='mx-auto flex h-full flex-col items-center space-y-4 overflow-y-auto p-4'>
-      <div className='sticky top-0 flex w-full flex-col items-center space-y-4 p-4'>
+      <div className='sticky top-0 z-0 flex w-full flex-col items-center space-y-4 p-4'>
         <AnimatePresence mode='wait'>
           {!recipe && (
             <motion.div
@@ -162,7 +162,7 @@ export default function Home() {
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: 50 }}
-            className='w-full'
+            className='z-10 w-full'
           >
             <Card className='overflow-y-auto bg-muted'>
               <CardHeader>
