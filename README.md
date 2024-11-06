@@ -1,36 +1,96 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Next Meal 🍔
 
-## Getting Started
+A Progressive Web App (PWA) that generates random meal recipes. Simply click a button and get a complete recipe with ingredients, instructions, and cooking videos when available.
 
-First, run the development server:
+## Features
+
+- 🎲 Random meal recipe generation
+- 🌙 Dark/Light mode support
+- 📱 PWA with offline support
+- 🎥 YouTube video integration (when available)
+- 📱 Fully responsive design
+- ✨ Smooth animations
+
+## Tech Stack
+
+- **Framework:** Next.js 14 (App Router)
+- **Language:** TypeScript
+- **Styling:** Tailwind CSS
+- **UI Components:** shadcn/ui
+- **Animations:** Framer Motion
+- **API:** TheMealDB
+- **PWA Support:** Serwist
+- **Theme:** next-themes
+- **Icons:** Lucide React
+
+## Live Demo
+
+[View Live Demo](https://nextmeal.aleksa.codes)
+
+## Development
 
 ```bash
-npm run dev
-# or
+# Install dependencies
+yarn install
+
+# Run development server
 yarn dev
-# or
-pnpm dev
-# or
-bun dev
+
+# Build for production
+yarn build
+
+# Start production server
+yarn start
+
+# Run linting
+yarn lint
+
+# Format code
+yarn prettier
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Project Structure
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```
+src/
+├── app/                    # Next.js app directory
+│   ├── about/             # About page
+│   ├── layout.tsx         # Root layout
+│   ├── page.tsx           # Home page
+│   └── sw.ts              # Service Worker
+├── components/            # React components
+│   ├── ui/               # UI components
+│   ├── navbar.tsx        # Navigation bar
+│   ├── footer.tsx        # Footer component
+│   └── mode-toggle.tsx   # Theme toggle
+└── styles/               # Global styles
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+## PWA Features
 
-## Learn More
+- Offline support
+- Installable on mobile and desktop
+- Fast loading times
+- App-like experience
 
-To learn more about Next.js, take a look at the following resources:
+## API Integration
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+This project uses [TheMealDB API](https://www.themealdb.com/api.php) to fetch random meal recipes. Each recipe includes:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+- Meal name and image
+- List of ingredients and measurements
+- Cooking instructions
+- YouTube video tutorial (when available)
+- Source link
 
-## Deploy on Vercel
+## Contributing
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add some amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.

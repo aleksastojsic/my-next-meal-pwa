@@ -1,14 +1,29 @@
+'use client';
+
+import { motion } from 'framer-motion';
+import Link from 'next/link';
+
 export default function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className='bg-background p-4 text-center'>
+    <motion.footer
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 0.5 }}
+      className='p-4 text-center'
+    >
       <p>
         © {currentYear} • Made by{' '}
-        <a href='https://aleksa.codes' target='_blank' rel='noopener noreferrer' className='text-primary underline'>
+        <Link
+          href='https://aleksa.codes'
+          target='_blank'
+          rel='noopener noreferrer'
+          className='text-primary underline decoration-wavy underline-offset-4 hover:opacity-80'
+        >
           aleksa.codes
-        </a>
+        </Link>
       </p>
-    </footer>
+    </motion.footer>
   );
 }

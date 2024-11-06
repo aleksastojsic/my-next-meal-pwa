@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
+import { motion, AnimatePresence } from 'framer-motion';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Dice1, Dice2, Dice3, Dice4, Dice5, Dice6, Loader2, ExternalLink } from 'lucide-react';
@@ -91,92 +92,146 @@ export default function Home() {
   const DiceIcon = diceIcons[diceIcon];
 
   return (
-    <div className='mx-auto flex h-full flex-col items-center justify-center space-y-4 p-4'>
-      {!recipe && (
-        <Image
-          src='/recipe-book.svg'
-          alt='Food image'
-          width={300}
-          height={300}
-          className='mx-auto h-[70%] max-h-[300px] w-[70%] max-w-[300px] sm:h-[100%] sm:w-[100%]'
-        />
-      )}
-      <h1 className='text-center text-4xl font-extrabold'>Hungry?</h1>
-      <h2 className='text-center text-2xl font-bold'>Can&apos;t decide what to eat?</h2>
-      <h3 className='text-center text-xl font-semibold'>We got you covered!</h3>
-      <div className='flex justify-center'>
-        <Button
-          onClick={getRandomMeal}
-          className='group w-full gap-2 rounded-lg py-6 text-lg font-bold uppercase hover:scale-105 sm:w-72'
-          disabled={isLoading}
-        >
-          {isLoading ? (
-            <Loader2 className='size-6 animate-spin' />
-          ) : (
-            <DiceIcon className='size-6 group-hover:animate-spin' />
+    <div className='mx-auto flex h-full flex-col items-center space-y-4 overflow-y-auto p-4'>
+      <div className='sticky top-0 flex w-full flex-col items-center space-y-4 p-4'>
+        <AnimatePresence mode='wait'>
+          {!recipe && (
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -20 }}
+              transition={{ duration: 0.2 }}
+            >
+              <Image
+                src='/recipe-book.svg'
+                alt='Food image'
+                width={300}
+                height={300}
+                className='mx-auto h-[200px] w-[200px] sm:h-[250px] sm:w-[250px]'
+              />
+            </motion.div>
           )}
-          <div>{isLoading ? 'Loading...' : 'Get a random meal'}</div>
-        </Button>
+        </AnimatePresence>
+        <motion.h1
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          className='text-center text-4xl font-extrabold'
+        >
+          Hungry?
+        </motion.h1>
+        <motion.h2
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.1 }}
+          className='text-center text-2xl font-bold'
+        >
+          Can&apos;t decide what to eat?
+        </motion.h2>
+        <motion.h3
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.2 }}
+          className='text-center text-xl font-semibold'
+        >
+          We got you covered!
+        </motion.h3>
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.3 }}
+          className='flex justify-center'
+        >
+          <Button
+            onClick={getRandomMeal}
+            className='group w-full gap-2 rounded-lg py-6 text-lg font-bold uppercase hover:scale-105 sm:w-72'
+            disabled={isLoading}
+          >
+            {isLoading ? (
+              <Loader2 className='size-6 animate-spin' />
+            ) : (
+              <DiceIcon className='size-6 group-hover:animate-spin' />
+            )}
+            <div>{isLoading ? 'Loading...' : 'Get a random meal'}</div>
+          </Button>
+        </motion.div>
       </div>
-      {recipe && (
-        <Card className='flex-1 overflow-y-auto bg-muted'>
-          <CardHeader>
-            <CardTitle className='text-center text-3xl font-bold text-primary'>{recipe.strMeal}</CardTitle>
-          </CardHeader>
-          <CardContent className='space-y-6'>
-            <Image
-              src={recipe.strMealThumb}
-              alt={recipe.strMeal}
-              width={300}
-              height={300}
-              className='mx-auto rounded-lg shadow-lg'
-            />
-            {recipe.strSource && (
-              <div className='text-center'>
-                <Link
-                  href={recipe.strSource}
-                  target='_blank'
-                  rel='noopener noreferrer'
-                  className='flex flex-row items-center justify-center gap-2 text-primary hover:underline'
+
+      <AnimatePresence mode='wait'>
+        {recipe && (
+          <motion.div
+            initial={{ opacity: 0, y: 50 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: 50 }}
+            className='w-full'
+          >
+            <Card className='overflow-y-auto bg-muted'>
+              <CardHeader>
+                <CardTitle className='text-center text-3xl font-bold text-primary'>{recipe.strMeal}</CardTitle>
+              </CardHeader>
+              <CardContent className='space-y-6'>
+                <motion.div
+                  initial={{ scale: 0.8 }}
+                  animate={{ scale: 1 }}
+                  transition={{ type: 'spring', stiffness: 200, damping: 15 }}
                 >
-                  <span>View Original Recipe</span>
-                  <ExternalLink className='size-4 text-muted-foreground' />
-                </Link>
-              </div>
-            )}
-            <div>
-              <h3 className='mb-2 inline-block border-b-2 border-primary text-xl font-semibold'>Ingredients:</h3>
-              <ul className='mt-2 list-inside list-disc space-y-1'>
-                {Array.from({ length: 20 }, (_, i) => i + 1).map((i) => {
-                  const ingredient = recipe[`strIngredient${i}` as keyof Meal];
-                  const measure = recipe[`strMeasure${i}` as keyof Meal];
-                  return ingredient && ingredient.trim() ? (
-                    <li key={i}>{`${measure && measure.trim() ? measure : ''} ${ingredient}`}</li>
-                  ) : null;
-                })}
-              </ul>
-            </div>
-            <div>
-              <h3 className='mb-2 inline-block border-b-2 border-primary text-xl font-semibold'>Instructions:</h3>
-              <p className='mt-2 whitespace-pre-line'>{recipe.strInstructions}</p>
-            </div>
-            {recipe.strYoutube && (
-              <div>
-                <h3 className='mb-2 inline-block border-b-2 border-primary text-xl font-semibold'>Watch the Recipe:</h3>
-                <div className='mt-2 aspect-video'>
-                  <iframe
-                    className='h-full w-full rounded-lg'
-                    src={`${recipe.strYoutube.replace('watch?v=', 'embed/')}`}
-                    title={recipe.strMeal}
-                    allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture'
-                    allowFullScreen
-                  ></iframe>
+                  <Image
+                    src={recipe.strMealThumb}
+                    alt={recipe.strMeal}
+                    width={300}
+                    height={300}
+                    className='mx-auto rounded-lg shadow-lg'
+                  />
+                </motion.div>
+                {recipe.strSource && (
+                  <div className='text-center'>
+                    <Link
+                      href={recipe.strSource}
+                      target='_blank'
+                      rel='noopener noreferrer'
+                      className='flex flex-row items-center justify-center gap-2 text-primary hover:underline'
+                    >
+                      <span>View Original Recipe</span>
+                      <ExternalLink className='size-4 text-muted-foreground' />
+                    </Link>
+                  </div>
+                )}
+                <div>
+                  <h3 className='mb-2 inline-block border-b-2 border-primary text-xl font-semibold'>Ingredients:</h3>
+                  <ul className='mt-2 list-inside list-disc space-y-1'>
+                    {Array.from({ length: 20 }, (_, i) => i + 1).map((i) => {
+                      const ingredient = recipe[`strIngredient${i}` as keyof Meal];
+                      const measure = recipe[`strMeasure${i}` as keyof Meal];
+                      return ingredient && ingredient.trim() ? (
+                        <li key={i}>{`${measure && measure.trim() ? measure : ''} ${ingredient}`}</li>
+                      ) : null;
+                    })}
+                  </ul>
                 </div>
-              </div>
-            )}
-          </CardContent>
-        </Card>
-      )}
+                <div>
+                  <h3 className='mb-2 inline-block border-b-2 border-primary text-xl font-semibold'>Instructions:</h3>
+                  <p className='mt-2 whitespace-pre-line'>{recipe.strInstructions}</p>
+                </div>
+                {recipe.strYoutube && (
+                  <div>
+                    <h3 className='mb-2 inline-block border-b-2 border-primary text-xl font-semibold'>
+                      Watch the Recipe:
+                    </h3>
+                    <div className='mt-2 aspect-video'>
+                      <iframe
+                        className='h-full w-full rounded-lg'
+                        src={`${recipe.strYoutube.replace('watch?v=', 'embed/')}`}
+                        title={recipe.strMeal}
+                        allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture'
+                        allowFullScreen
+                      ></iframe>
+                    </div>
+                  </div>
+                )}
+              </CardContent>
+            </Card>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </div>
   );
 }
