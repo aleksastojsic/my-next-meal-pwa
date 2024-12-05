@@ -25,7 +25,7 @@ A Progressive Web App (PWA) that generates random meal recipes. Simply click a b
 
 ## Live Demo
 
-[View Live Demo](https://nextmeal.aleksa.codes)
+[View Live Demo](https://nextmeal.aleksa.io)
 
 ## Development
 
