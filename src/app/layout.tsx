@@ -55,7 +55,7 @@ export const viewport: Viewport = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang='en' dir='ltr' suppressHydrationWarning>
-      <body className={cn(inter.variable, 'h-dvh bg-background font-sans antialiased')}>
+      <body className={cn(inter.variable, 'bg-background h-dvh font-sans antialiased')}>
         <ThemeProvider attribute='class' defaultTheme='system' enableSystem disableTransitionOnChange>
           <div className='mx-auto flex h-full max-w-3xl flex-col'>
             <Navbar />

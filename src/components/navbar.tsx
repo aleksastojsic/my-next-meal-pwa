@@ -41,7 +41,7 @@ export default function Navbar() {
               className='gap-2'
             >
               <span>GitHub</span>
-              <ExternalLink className='size-4 text-primary' />
+              <ExternalLink className='text-primary size-4' />
             </Link>
           </DropdownMenuItem>
         </DropdownMenuContent>

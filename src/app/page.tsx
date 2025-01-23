@@ -164,9 +164,9 @@ export default function Home() {
             exit={{ opacity: 0, y: 50 }}
             className='z-10 w-full'
           >
-            <Card className='overflow-y-auto bg-muted'>
+            <Card className='bg-muted overflow-y-auto'>
               <CardHeader>
-                <CardTitle className='text-center text-3xl font-bold text-primary'>{recipe.strMeal}</CardTitle>
+                <CardTitle className='text-primary text-center text-3xl font-bold'>{recipe.strMeal}</CardTitle>
               </CardHeader>
               <CardContent className='space-y-6'>
                 <motion.div
@@ -188,15 +188,15 @@ export default function Home() {
                       href={recipe.strSource}
                       target='_blank'
                       rel='noopener noreferrer'
-                      className='flex flex-row items-center justify-center gap-2 text-primary hover:underline'
+                      className='text-primary flex flex-row items-center justify-center gap-2 hover:underline'
                     >
                       <span>View Original Recipe</span>
-                      <ExternalLink className='size-4 text-muted-foreground' />
+                      <ExternalLink className='text-muted-foreground size-4' />
                     </Link>
                   </div>
                 )}
                 <div>
-                  <h3 className='mb-2 inline-block border-b-2 border-primary text-xl font-semibold'>Ingredients:</h3>
+                  <h3 className='border-primary mb-2 inline-block border-b-2 text-xl font-semibold'>Ingredients:</h3>
                   <ul className='mt-2 list-inside list-disc space-y-1'>
                     {Array.from({ length: 20 }, (_, i) => i + 1).map((i) => {
                       const ingredient = recipe[`strIngredient${i}` as keyof Meal];
@@ -208,12 +208,12 @@ export default function Home() {
                   </ul>
                 </div>
                 <div>
-                  <h3 className='mb-2 inline-block border-b-2 border-primary text-xl font-semibold'>Instructions:</h3>
+                  <h3 className='border-primary mb-2 inline-block border-b-2 text-xl font-semibold'>Instructions:</h3>
                   <p className='mt-2 whitespace-pre-line'>{recipe.strInstructions}</p>
                 </div>
                 {recipe.strYoutube && (
                   <div>
-                    <h3 className='mb-2 inline-block border-b-2 border-primary text-xl font-semibold'>
+                    <h3 className='border-primary mb-2 inline-block border-b-2 text-xl font-semibold'>
                       Watch the Recipe:
                     </h3>
                     <div className='mt-2 aspect-video'>

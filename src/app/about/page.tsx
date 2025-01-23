@@ -10,8 +10,8 @@ export const metadata: Metadata = {
 
 const Page = () => {
   return (
-    <div className='container mx-auto h-full overflow-y-auto p-4'>
-      <Card className='h-full overflow-y-auto'>
+    <div className='container h-full overflow-y-auto'>
+      <Card>
         <CardHeader>
           <CardTitle>About</CardTitle>
         </CardHeader>
